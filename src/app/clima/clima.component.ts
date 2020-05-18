@@ -69,7 +69,7 @@ export class ClimaComponent implements OnInit {
            var  latitude= datosIp.latitude;
           var longitude=datosIp.longitude;
 
-          _this.climaService.getClimaConditions(_this.latitude, _this.longitude)
+          _this.climaService.getClimaConditions(longitude, latitude)
             .subscribe({
               async next(weatherRaw) {
                 const weatherData = await weatherRaw.json();
