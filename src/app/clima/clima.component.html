@@ -1,0 +1,66 @@
+<main class="container-fluid">
+
+    <div class="row" *ngIf="cargando">
+      <div class="col-12 col-m-12 col-sm-12 text-center">
+        <h1 class="display-1">Cargando. Espere un momento por favor</h1>
+        <img src="assets/25.gif" alt="">
+      </div>
+    </div>
+  
+    <div *ngIf="!cargando" class="row">
+      <div class="col-12">
+        <div class="text-center mt-2" *ngIf="!cargando">
+          
+          <strong class="display-4">{{city}}, {{region_name}}, {{country_name}}.</strong>
+          <br>
+          <img style="max-width: 50px;" class=" mx-auto rounded my-2" src="{{country_flag}}" alt="Bandera">
+        </div>
+      </div>
+      
+      <div class="col-12 col-m-6 coloffset-m-3">
+        <div class="text-center mt-2" *ngIf="!cargando">
+          
+          <div class="info-Gral">
+            <ng-template #popover>
+                <strong>Dirección IP {{ip}}</strong> <br>
+                <strong>Codigo Postal:</strong> {{zip}} <br>
+                <strong>Latitud: </strong>  {{latitude}} <br>
+                <strong>Longitud:</strong>  {{longitude}} <br>                            
+            </ng-template>
+
+            <button type="button" class="btn btn-lg btn-danger max-width:20px"
+                placement="right"
+                white-space: nowrap
+                [ngbPopover]= "popover"    
+                popoverTitle="Informacion Adicional">
+                +
+            </button>
+            
+        </div>
+        
+        </div>
+      </div>
+
+
+
+
+      <div class="col-12 col-m-6 offset-m-3">
+        <div class="text-center mt-2" *ngIf="!cargando">
+          
+          <strong class="display-4">{{hora}}</strong>
+        
+        </div>
+      </div>
+
+
+
+      <div class="col-12 col-md-6 offset-md-3">
+        <app-detalles-clima [detalles]="detallesHoy"></app-detalles-clima>
+      </div>
+  
+      <div *ngFor="let detalles of detallesProximos;" class="col-12 col-md-6 my-2">
+        <app-detalles-clima [detalles]="detalles"></app-detalles-clima>
+      </div>
+  
+    </div>
+  </main>

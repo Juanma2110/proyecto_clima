@@ -1,0 +1,30 @@
+.titulo{
+    background-color: rgb(110, 209, 215);
+    border-radius: 10px;
+}
+               
+.mg-responsive{
+    border-radius: 50%;
+}
+.nom{
+    font-size: 30px;
+}
+.ing{
+    font-style: oblique ;
+    font-size: .6cm;
+}
+.contacto{
+    font-family: Arial;
+    font-size: 15px;
+}
+hr{
+   height: 1px;
+   border: 0;
+   color:black;
+   background-color: black;
+}
+.datos{
+    padding-top: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}

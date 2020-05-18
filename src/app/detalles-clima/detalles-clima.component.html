@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-body">
+        <div class="text-center">
+            <p class="h5">
+                {{detalles.date | diaFecha}}
+            </p>
+            <p class="h6">
+                {{detalles.date | formatoFecha}}
+            </p>
+            <img style="max-width: 200px;" class="img-fluid mb-2" src="{{resolverImagen()}}" alt=""><br>
+            <button *ngIf="detalles.temp2m" type="button" class="btn btn-primary">
+                <strong>Mínima:  </strong> <span class="badge badge-light">{{detalles.temp2m.min}}°C</span>
+            </button>&nbsp;
+            <button *ngIf="detalles.temp2m" type="button" class="btn btn-danger">
+                <strong>  Máxima: </strong><span class="badge badge-light">{{detalles.temp2m.max}}°C</span>
+                
+            </button>&nbsp;
+        </div>
+    </div>
+    
+
+</div>
